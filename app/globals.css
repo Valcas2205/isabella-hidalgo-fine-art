@@ -15,7 +15,8 @@ a { color: inherit; }
 .header-actions b { font-size: 12px; }
 .hero { min-height: 895px; background-size: cover; background-position: center; position: relative; display: grid; place-items: center; overflow: hidden; }
 .hero-wash { position:absolute; inset:0; background: rgba(243,231,212,.15); }
-.hero-content { position: relative; display: flex; flex-direction: column; color: var(--blue); font-family: 'Courier New', monospace; font-size: clamp(60px, 10vw, 150px); line-height: .78; letter-spacing: .06em; transform: rotate(-2deg); }
+.hero-content { position: relative; display: flex; justify-content:center; align-items:center; transform: rotate(-2deg); }
+.hero-content img { width: min(54vw, 560px); height: auto; display:block; }
 .script:first-child { margin-left: -20px; }
 .shop { padding: 90px 4%; border-top: 1px solid var(--line); }
 .section-heading { display:flex; justify-content:space-between; align-items:end; margin-bottom: 65px; }
@@ -66,5 +67,5 @@ details p { font-family:'Courier New', monospace; font-size:17px; max-width:700p
 .cart { position:fixed; z-index:10; right:0; top:0; height:100vh; width:min(430px,100%); background:var(--paper); padding:50px 35px; box-shadow:-10px 0 30px #0002; }
 .cart .close { float:right; border:0; background:transparent; cursor:pointer; }
 .cart h2 { margin:100px 0 30px; }
-@media (max-width: 700px) { .site-header { height:120px; padding:16px 5%; } .site-header img { width:95px; } .site-header nav { gap:15px; margin:0; font-size:13px; } .account span { display:none; } .hero { min-height:500px; } .product-grid, .contact, .about-intro, .footer-top { grid-template-columns:1fr; } .product-grid { gap:55px; } .contact { gap:55px; padding:70px 6%; }
+@media (max-width: 700px) { .site-header { height:120px; padding:16px 5%; } .site-header img { width:95px; } .site-header nav { gap:15px; margin:0; font-size:13px; } .account span { display:none; } .hero { min-height:500px; } .hero-content img { width:min(78vw, 420px); } .product-grid, .contact, .about-intro, .footer-top { grid-template-columns:1fr; } .product-grid { gap:55px; } .contact { gap:55px; padding:70px 6%; }
 .contact-photo, .contact-photo img { min-height:480px; } .form-row { gap:26px; } .footer-top { gap:50px; } .footer-bottom { flex-direction:column; } .newsletter input { width:100%; margin-bottom:14px; } .newsletter button { margin:0; } .shop { padding:65px 6%; } }
