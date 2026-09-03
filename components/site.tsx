@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, ShoppingBag, UserRound, X } from 'lucide-react'
 import { PRODUCTS, formatPrice, type Product } from '@/lib/products'
 
 const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-PtNTvrjNEmybKxbRfIjneSN3w4CoDJ.png'
-const hero = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-KhyhpPz4Pcc27ee7mtadpmOfMCz0XE.png'
+const hero = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/C6D2587D-D281-4227-8EA1-1A3543C9966E_4_5005_c_edited-1VU5IkJzMbpdW56TY9CFi5sZuKjANo.avif'
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -21,7 +21,7 @@ export function ShopSlider() { const [index, setIndex] = useState(0); const show
 
 function ProductCard({ product }: { product: Product }) { const [added, setAdded] = useState(false); const buy = async () => { setAdded(true); const response = await fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ productId: product.id, quantity: 1 }) }); const data = await response.json(); if (data.url) window.location.assign(data.url); }; return <article className="product"><div className="product-image"><img src={product.image} alt={product.name}/></div><em>{product.description}</em><h3>{product.name}</h3><div className="product-foot"><span>{formatPrice(product.priceInCents)}</span><button onClick={buy}>{added ? 'OPENING CHECKOUT' : 'ADD TO BAG'}</button></div></article> }
 
-export function Contact() { return <section id="contact" className="contact"><div className="contact-copy"><small>GET IN TOUCH</small><h2>CONTACT</h2><p>For original painting enquiries, commissions, exhibitions, collaborations, or press, please get in touch.</p><form onSubmit={(e) => e.preventDefault()}><div className="form-row"><label>First name *<input required /></label><label>Last name<input /></label></div><div className="form-row"><label>Email *<input type="email" required /></label><label>Phone<input /></label></div><label>Additional information<textarea rows={4}/></label><button type="submit">SUBMIT</button></form></div><div className="contact-photo"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/448740_56068a92965a4a16ac44fb98c391b6fc~mv2-dhEqbGaDr2rhzAaAS7FaRMmG8IhBxw.avif" alt="Isabella Hidalgo in her studio" /></div></section> }
+export function Contact() { return <section id="contact" className="contact"><div className="contact-copy"><small>GET IN TOUCH</small><h2>CONTACT</h2><p>For original painting enquiries, commissions, exhibitions, collaborations, or press, please get in touch.</p><form onSubmit={(e) => e.preventDefault()}><div className="form-row"><label>First name *<input required /></label><label>Last name<input /></label></div><div className="form-row"><label>Email *<input type="email" required /></label><label>Phone<input /></label></div><label>Additional information<textarea rows={4}/></label><button type="submit">SUBMIT</button></form></div><div className="contact-photo"><img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/448740_55119b2b2e0749e59ea69013bd5bd05f~mv2-CtwEWdAPGIlp6nxIaO04bYhA71BWwt.avif" alt="Isabella Hidalgo in her studio" /></div></section> }
 
 function Cart({ onClose }: { onClose: () => void }) { return <aside className="cart" aria-label="Shopping bag"><button className="close" onClick={onClose} aria-label="Close shopping bag"><X/></button><small>YOUR BAG</small><h2>Your bag is empty</h2><Link href="/" onClick={onClose}>CONTINUE SHOPPING</Link></aside> }
 
