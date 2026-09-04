@@ -77,28 +77,32 @@ export function Hero() {
       </div>
     </section>
   )
-const paintingImg = '/1A371E4F-B3B1-462B-B62E-30CD72A38831_4_5005_c.avif'
-const rightImg = '/hello! email me at hello_ISABELLAHIDALGO_com.avif'
+}
+
+/* ─── FEATURE SPLIT ─────────────────────────────────────── */
+const paintingImg = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/448740_55119b2b2e0749e59ea69013bd5bd05f~mv2-nwit46h9WqPnld6MXNcroO0RrpgZ84.avif'
+const handImg = '/fotomano.avif'
 
 export function FeatureSplit() {
   return (
     <section className="feature-split">
       {/* Left: painting + blue overlay card */}
       <div className="feature-left">
-        <img src={paintingImg} alt="Always guided by the universe" className="feature-painting" />
+        <img src={paintingImg} alt="11 Meters of Sky" className="feature-painting" />
         <div className="feature-painting-label">
-          <span>ALWAYS GUIDED</span>
+          <span>11 METERS OF SKY</span>
+          <span>1/11</span>
         </div>
         <div className="feature-blue-card">
           <p>visual artist exploring attention, perception, and the small moments that shape a life.</p>
         </div>
       </div>
-      {/* Right: photo of Isabella with text overlay */}
+      {/* Right: photo of hand with text overlay */}
       <div className="feature-right">
-        <img src={rightImg} alt="Isabella Hidalgo" />
+        <img src={handImg} alt="Isabella hand" />
         <div className="feature-right-overlay">
           <p>What becomes visible when we slow down enough to notice?</p>
-          <Link href="/" className="btn-blue">MAKE IT YOURS</Link>
+          <Link href="/#shop" className="btn-blue">MAKE IT YOURS</Link>
         </div>
       </div>
     </section>
@@ -129,23 +133,32 @@ export function AboutMini() {
 /* ─── SHOP SLIDER (existente) ────────────────────────────── */
 export function ShopSlider() {
   const [index, setIndex] = useState(0)
+  const total = PRODUCTS.length
+  const pageCount = Math.ceil(total / 3)
+  const currentPage = Math.floor(index / 3) + 1
   const shown = PRODUCTS.slice(index, index + 3).concat(
-    PRODUCTS.slice(0, Math.max(0, index + 3 - PRODUCTS.length))
+    PRODUCTS.slice(0, Math.max(0, index + 3 - total))
   )
+  const prev = () => setIndex((index - 3 + total) % total)
+  const next = () => setIndex((index + 3) % total)
   return (
-    <section className="shop">
+    <section className="shop" id="shop">
       <div className="section-heading">
         <div>
           <small>SHOP</small>
           <h2>See what&apos;s available</h2>
         </div>
-        <div className="slider-buttons">
-          <button onClick={() => setIndex((index + PRODUCTS.length - 1) % PRODUCTS.length)} aria-label="Previous"><ArrowLeft /></button>
-          <button onClick={() => setIndex((index + 1) % PRODUCTS.length)} aria-label="Next"><ArrowRight /></button>
-        </div>
       </div>
       <div className="product-grid">
         {shown.map((product) => <ProductCard key={product.id} product={product} />)}
+      </div>
+      <div className="slider-nav">
+        <button onClick={prev} aria-label="Previous"><ArrowLeft size={16} /></button>
+        <span className="slider-pagination">{currentPage} / {pageCount}</span>
+        <button onClick={next} aria-label="Next"><ArrowRight size={16} /></button>
+      </div>
+      <div className="shop-view-all">
+        <Link href="/" className="world-link">VIEW ALL</Link>
       </div>
     </section>
   )
@@ -225,7 +238,7 @@ export function VideoHero() {
         <p className="video-sub">
           Limited editions created from selected paintings, made to bring colour and presence into your home.
         </p>
-        <Link href="/" className="btn-blue btn-blue--outline">SHOP THE COLLECTION</Link>
+        <Link href="/#shop" className="btn-blue btn-blue--outline">SHOP THE COLLECTION</Link>
       </div>
     </section>
   )
