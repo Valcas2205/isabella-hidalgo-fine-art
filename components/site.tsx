@@ -77,28 +77,25 @@ export function Hero() {
       </div>
     </section>
   )
-}
-
-const paintingImg = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/448740_55119b2b2e0749e59ea69013bd5bd05f~mv2-nwit46h9WqPnld6MXNcroO0RrpgZ84.avif'
-const handImg = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Untitled%20design%20%281%29-2kY4no9CMPTnW6qKTQsbHwUBb52wBF.avif'
+const paintingImg = '/1A371E4F-B3B1-462B-B62E-30CD72A38831_4_5005_c.avif'
+const rightImg = '/hello! email me at hello_ISABELLAHIDALGO_com.avif'
 
 export function FeatureSplit() {
   return (
     <section className="feature-split">
       {/* Left: painting + blue overlay card */}
       <div className="feature-left">
-        <img src={paintingImg} alt="11 Meters of Sky" className="feature-painting" />
+        <img src={paintingImg} alt="Always guided by the universe" className="feature-painting" />
         <div className="feature-painting-label">
-          <span>11 METERS OF SKY</span>
-          <span>1/11</span>
+          <span>ALWAYS GUIDED</span>
         </div>
         <div className="feature-blue-card">
           <p>visual artist exploring attention, perception, and the small moments that shape a life.</p>
         </div>
       </div>
-      {/* Right: photo of hand with text overlay */}
+      {/* Right: photo of Isabella with text overlay */}
       <div className="feature-right">
-        <img src={handImg} alt="Isabella hand" />
+        <img src={rightImg} alt="Isabella Hidalgo" />
         <div className="feature-right-overlay">
           <p>What becomes visible when we slow down enough to notice?</p>
           <Link href="/" className="btn-blue">MAKE IT YOURS</Link>
