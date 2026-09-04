@@ -115,39 +115,57 @@ a { color: inherit; }
 .feature-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 600px;
+  min-height: 800px;
 }
 .feature-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  padding: 80px 10%;
   position: relative;
-  overflow: hidden;
-  background: var(--sand);
 }
-.feature-painting {
-  width: 50%;
-  max-width: 340px;
-  aspect-ratio: 0.9;
-  object-fit: cover;
-  display: block;
-  margin: 40px auto 0;
-}
-.feature-blue-card {
+.feature-left::after {
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 55%;
-  background: var(--blue);
-  color: #fff;
-  padding: 36px 28px 28px;
-  font-family: 'Courier New', monospace;
-  font-size: 18px;
-  line-height: 1.5;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, #d6d3cc, #e5d2b7);
+  z-index: 0;
+}
+.feature-painting, .feature-blue-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+}
+.feature-painting {
+  aspect-ratio: 0.85;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 .feature-painting-label {
-  display: block;
-  margin-top: 24px;
-  font-size: 12px;
-  letter-spacing: .15em;
-  opacity: .7;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: bold;
+  font-family: monospace;
+  margin-bottom: 40px;
+}
+.feature-blue-card {
+  background: var(--blue);
+  color: #fff;
+  padding: 60px 40px;
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
 }
 .feature-right {
   position: relative;
@@ -158,22 +176,25 @@ a { color: inherit; }
   height: 100%;
   object-fit: cover;
   display: block;
-  min-height: 500px;
 }
 .feature-right-overlay {
   position: absolute;
-  bottom: 48px;
-  right: 40px;
-  max-width: 300px;
-  text-align: right;
+  bottom: 80px;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .feature-right-overlay p {
   color: #fff;
   font-family: 'Courier New', monospace;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.4;
-  margin: 0 0 24px;
+  margin: 0 0 32px;
   text-shadow: 0 1px 6px rgba(0,0,0,.4);
+  max-width: 400px;
 }
 
 /* ─── ABOUT MINI ─────────────────────────────────────────── */

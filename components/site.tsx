@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { ArrowLeft, ArrowRight, X } from 'lucide-react'
 import { PRODUCTS, formatPrice, type Product } from '@/lib/products'
 
-const logo = '/Logonombre.png'
+const logo = '/logo1.png'
 
 /* ─── HEADER ─────────────────────────────────────────────── */
 export function Header() {
@@ -79,9 +79,8 @@ export function Hero() {
   )
 }
 
-/* ─── FEATURE SPLIT (nueva sección 1) ───────────────────── */
-const paintingImg = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/448740_55119b2b2e0749e59ea69013bd5bd05f~mv2-nwit46h9WqPnld6MXNcroO0RrpgZ84.avif'
-const isabellaStudioImg = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0141_JPG-oog8OS3gYwWumTM8ZlIX4omjtBYF2x.avif'
+const paintingImg = '/hello! email me at hello_ISABELLAHIDALGO_com.avif'
+const handImg = '/1A371E4F-B3B1-462B-B62E-30CD72A38831_4_5005_c.avif'
 
 export function FeatureSplit() {
   return (
@@ -94,9 +93,9 @@ export function FeatureSplit() {
           <span className="feature-painting-label">11 METERS OF SKY &nbsp;&nbsp; 11</span>
         </div>
       </div>
-      {/* Right: photo of Isabella in her studio with text overlay */}
+      {/* Right: photo of hand with text overlay */}
       <div className="feature-right">
-        <img src={isabellaStudioImg} alt="Isabella Hidalgo in her studio" />
+        <img src={handImg} alt="Isabella hand" />
         <div className="feature-right-overlay">
           <p>What becomes visible when we slow down enough to notice?</p>
           <Link href="/" className="btn-blue">MAKE IT YOURS</Link>
