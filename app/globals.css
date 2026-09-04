@@ -115,7 +115,6 @@ a { color: inherit; }
 .feature-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 650px;
 }
 .feature-left {
   display: flex;
@@ -123,7 +122,7 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
   background: var(--paper);
-  padding: 60px 8%;
+  padding: 60px 5%;
   position: relative;
 }
 .feature-left::after {
@@ -140,7 +139,7 @@ a { color: inherit; }
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 420px;
+  max-width: 320px;
 }
 .feature-painting {
   aspect-ratio: 0.85;
@@ -161,33 +160,35 @@ a { color: inherit; }
 .feature-blue-card {
   background: var(--blue);
   color: #fff;
-  padding: 45px 30px;
+  padding: 35px 24px;
   font-family: 'Courier New', monospace;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.4;
   text-align: center;
 }
 .feature-right {
   position: relative;
   overflow: hidden;
+  background: #000;
 }
 .feature-right img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  filter: brightness(0.9) saturate(0.9);
+  opacity: 0.85;
+  filter: saturate(0.8);
 }
 .feature-right::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 40%);
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
   pointer-events: none;
 }
 .feature-right-overlay {
   position: absolute;
-  bottom: 60px;
+  bottom: 50px;
   right: 0;
   left: 0;
   display: flex;
@@ -199,11 +200,11 @@ a { color: inherit; }
 .feature-right-overlay p {
   color: #fff;
   font-family: 'Courier New', monospace;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.4;
-  margin: 0 0 24px;
-  text-shadow: 0 1px 4px rgba(0,0,0,.5);
-  max-width: 360px;
+  margin: 0 0 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,.6);
+  max-width: 320px;
 }
 
 /* ─── ABOUT MINI ─────────────────────────────────────────── */
