@@ -88,9 +88,12 @@ export function FeatureSplit() {
       {/* Left: painting + blue overlay card */}
       <div className="feature-left">
         <img src={paintingImg} alt="11 Meters of Sky" className="feature-painting" />
+        <div className="feature-painting-label">
+          <span>11 METERS OF SKY</span>
+          <span>1/11</span>
+        </div>
         <div className="feature-blue-card">
           <p>visual artist exploring attention, perception, and the small moments that shape a life.</p>
-          <span className="feature-painting-label">11 METERS OF SKY &nbsp;&nbsp; 11</span>
         </div>
       </div>
       {/* Right: photo of hand with text overlay */}
