@@ -1,0 +1,4 @@
+import { Footer, Header } from '@/components/site'
+
+const questions = [['How do I purchase an original painting?', 'Select a work from the shop and add it to your bag. Checkout is securely handled through Stripe.'], ['Do you ship internationally?', 'Yes. Shipping options and costs are calculated at checkout based on your destination.'], ['Are the paintings framed?', 'Each work includes its framing details in the individual product information.'], ['Can I request a commission?', 'Absolutely. Please use the contact form on the home page to share your idea.'], ['What is your return policy?', 'Please review the return policy before completing your purchase.']]
+export default function FAQ() { return <><Header/><main className="faq-page"><small>QUESTIONS, ANSWERED</small><h1>FAQ</h1><div className="faq-list">{questions.map(([q,a]) => <details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</div></main><Footer/></> }
